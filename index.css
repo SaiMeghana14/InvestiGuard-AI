@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Orbitron:wght@500;600;700;800;900&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-heading: "Orbitron", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  
+  --color-primary: oklch(0.65 0.19 210);
+  --color-primary-dark: oklch(0.50 0.16 210);
+  --color-primary-light: oklch(0.75 0.15 210);
+  --color-on-primary: oklch(1.0 0 0);
+  --color-secondary: oklch(0.70 0.18 182.5);
+  --color-secondary-dark: oklch(0.55 0.15 182.5);
+  --color-accent: oklch(0.62 0.20 242.75);
+  --color-accent-glow: oklch(0.55 0.22 242.75);
+  --color-background: oklch(0.12 0.02 240);
+  --color-background-alt: oklch(0.15 0.025 240);
+  --color-background-card: oklch(0.18 0.03 240);
+  --color-foreground: oklch(0.95 0.01 240);
+  --color-foreground-muted: oklch(0.70 0.02 240);
+  --color-muted: oklch(0.22 0.03 240);
+  --color-border: oklch(0.28 0.04 240);
+  --color-border-glow: oklch(0.55 0.19 210 / 0.3);
+  --color-destructive: oklch(0.65 0.22 27.33);
+  --color-warning: oklch(0.75 0.18 85);
+  --color-success: oklch(0.65 0.18 150);
+  --color-ring: oklch(0.55 0.19 210);
+  
+  --color-agent-lead: oklch(0.65 0.19 210);
+  --color-agent-intake: oklch(0.65 0.18 150);
+  --color-agent-tx: oklch(0.65 0.20 242.75);
+  --color-agent-behavior: oklch(0.70 0.18 320);
+  --color-agent-risk: oklch(0.65 0.22 27.33);
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+}
+
+/* Neon glow effects */
+.neon-glow-blue {
+  box-shadow: 0 0 15px oklch(0.55 0.19 210 / 0.3), 0 0 30px oklch(0.55 0.19 210 / 0.1);
+}
+
+.neon-glow-cyan {
+  box-shadow: 0 0 15px oklch(0.70 0.18 182.5 / 0.3), 0 0 30px oklch(0.70 0.18 182.5 / 0.1);
+}
+
+.text-glow {
+  text-shadow: 0 0 10px oklch(0.55 0.19 210 / 0.5);
+}
+
+/* Grid background */
+.bg-grid {
+  background-image: 
+    linear-gradient(oklch(0.25 0.03 240 / 0.5) 1px, transparent 1px),
+    linear-gradient(90deg, oklch(0.25 0.03 240 / 0.5) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Scanline effect */
+.scanline::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0px,
+    transparent 2px,
+    oklch(0 0 0 / 0.03) 2px,
+    oklch(0 0 0 / 0.03) 4px
+  );
+  z-index: 9999;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: oklch(0.15 0.025 240);
+}
+
+::-webkit-scrollbar-thumb {
+  background: oklch(0.35 0.05 240);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: oklch(0.45 0.08 240);
+}
+
+/* Typing indicator animation */
+@keyframes typing-dot {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+  30% { transform: translateY(-4px); opacity: 1; }
+}
+
+.typing-dot {
+  animation: typing-dot 1.4s infinite ease-in-out;
+}
+
+.typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+/* Pulse ring animation */
+@keyframes pulse-ring {
+  0% { transform: scale(0.95); opacity: 0.7; }
+  50% { transform: scale(1.05); opacity: 0.3; }
+  100% { transform: scale(0.95); opacity: 0.7; }
+}
+
+.pulse-ring {
+  animation: pulse-ring 2s infinite;
+}
+
+/* Glitch animation */
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(2px, -1px); }
+  60% { transform: translate(-1px, -2px); }
+  80% { transform: translate(1px, 1px); }
+  100% { transform: translate(0); }
+}
+
+.glitch:hover {
+  animation: glitch 0.3s infinite;
+}
+
+/* Fade in */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
