@@ -163,29 +163,21 @@ Agents collaborate by:
 
 ## 🏗️ System Architecture
 
-```text
-Frontend (React + TypeScript)
-            │
-            ▼
-InvestiGuard AI Dashboard
-            │
-            ▼
-Band Collaboration Layer
-            │
- ┌──────────┼──────────┐
- ▼          ▼          ▼
-Intake   Transaction  Behavior
-Agent     Analyst     Analyst
- │            │           │
- └────────────┼───────────┘
-              ▼
-        Risk Assessor
-              ▼
-      Lead Investigator
-              ▼
-        Human Review
-              ▼
-         Audit Report
+```mermaid
+flowchart TD
+    A[User] --> B[InvestiGuard AI Dashboard]
+    B --> C[Band Collaboration Layer]
+
+    C --> D[Intake Agent]
+    D --> E[Transaction Analyst]
+    E --> F[Behavior Analyst]
+    F --> G[Risk Assessor]
+    G --> H[Lead Investigator]
+
+    H --> I[Evidence Board]
+    I --> J[Risk Assessment]
+    J --> K[Human Review]
+    K --> L[Audit Report]
 ```
 
 ---
