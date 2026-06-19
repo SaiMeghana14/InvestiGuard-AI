@@ -1,7 +1,15 @@
 # 🛡️ InvestiGuard AI
-
 ### Multi-Agent Fraud Investigation Platform
 
+<div align="center">
+
+<img src="docs/cover.png" alt="InvestiGuard AI" width="900"/>
+
+</div>
+
+---
+
+## 📖 Overview
 InvestiGuard AI is a multi-agent fraud investigation system built for high-stakes financial workflows. Instead of relying on a single AI model, multiple specialized agents collaborate through a shared communication layer to investigate suspicious transactions, exchange evidence, assess risk, and generate explainable recommendations for human investigators.
 
 ## 🔗 Live Demo
